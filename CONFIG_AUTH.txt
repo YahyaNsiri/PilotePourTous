@@ -1,0 +1,32 @@
+PILOT POUR TOUS — ACTIVATION DE L'INSCRIPTION
+
+Le site contient maintenant le vrai système d'inscription Firebase :
+- e-mail + mot de passe
+- connexion Google
+- profil prénom/nom
+- session utilisateur
+
+IMPORTANT : tu ne dois PAS mettre un mot de passe fixe dans le code. Chaque utilisateur choisit son propre mot de passe et Firebase le gère de manière sécurisée.
+
+ÉTAPES (environ 5–10 minutes)
+
+1. Va dans Firebase Console : https://console.firebase.google.com/
+2. Crée un projet, par exemple « PilotePourTous ».
+3. Dans le projet, ajoute une application Web (icône </>).
+4. Firebase te donnera un objet « firebaseConfig ».
+5. Ouvre firebase-config.js dans ce dossier et remplace les six valeurs REPLACE_ME par celles de ton objet firebaseConfig.
+6. Dans Firebase : Authentication → Sign-in method.
+7. Active « Email/Password ».
+8. Active « Google ».
+9. Dans Authentication → Settings → Authorized domains, ajoute le domaine réel de ton site (par exemple ton domaine personnalisé).
+10. Si tu testes en local, ajoute aussi localhost comme domaine autorisé si Firebase te le demande.
+11. Mets à jour le site avec firebase-config.js + auth.js + tous les autres fichiers du ZIP.
+
+Après cela :
+- « Créer mon compte » crée réellement un compte Firebase.
+- Le mot de passe n'est pas enregistré dans localStorage ni dans le HTML.
+- « Continuer avec Google » ouvre la connexion Google.
+
+Documentation officielle :
+https://firebase.google.com/docs/auth/web/start
+https://firebase.google.com/docs/auth/web/google-signin
