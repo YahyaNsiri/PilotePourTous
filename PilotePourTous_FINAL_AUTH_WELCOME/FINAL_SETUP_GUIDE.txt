@@ -1,0 +1,109 @@
+PILOTePOURTOUS — GUIDE FINAL
+==============================
+
+A. PASSWORD "AFFICHER"
+The signup password and confirmation fields now use a reliable Afficher/Masquer button.
+
+B. WELCOME MINI-BAR
+After a successful Firebase email signup or Google sign-in, the site displays:
+"Bonjour [name] 👋"
+The name comes from the Firebase displayName (or email fallback).
+The bar also appears when Firebase restores an existing signed-in session.
+
+C. CONNECT FIREBASE
+1. Go to https://console.firebase.google.com/
+2. Open your Firebase project.
+3. Click the gear icon -> Project settings.
+4. Under "Your apps", choose/add the Web app (</>).
+5. Register the web app.
+6. Firebase displays a firebaseConfig object.
+7. Open this website's firebase-config.js.
+8. Replace ONLY the six REPLACE_ME values:
+   apiKey
+   authDomain
+   projectId
+   storageBucket
+   messagingSenderId
+   appId
+9. Do NOT paste a service-account JSON/private key into the website.
+
+D. ENABLE REAL ACCOUNT CREATION
+Firebase Console -> Authentication -> Sign-in method:
+1. Enable Email/Password.
+2. Save.
+3. Enable Google if you want the Google button.
+4. Save.
+
+E. AUTHORIZE THE WEBSITE DOMAIN
+Firebase Console -> Authentication -> Settings -> Authorized domains.
+Add the exact domain where the site will live.
+If you use GitHub Pages, add the github.io domain.
+If you later use a custom domain, add that domain too.
+
+F. MOVE OFF NETLIFY FOR FREE — GITHUB PAGES
+1. Create/login to GitHub.
+2. Create a NEW repository.
+3. If you want the cleanest free GitHub URL, name it:
+   YOUR-GITHUB-USERNAME.github.io
+4. Extract this ZIP.
+5. Upload ALL files from the ZIP root to the repository root.
+   index.html must be directly in the repository root.
+6. GitHub -> repository -> Settings -> Pages.
+7. Under Build and deployment, choose the branch containing the files
+   (normally main) and the root folder "/".
+8. Save.
+9. GitHub will give you:
+   https://YOUR-GITHUB-USERNAME.github.io/
+10. Wait for deployment, then open the URL.
+11. In Firebase Authorized domains, add:
+   YOUR-GITHUB-USERNAME.github.io
+
+G. CUSTOM DOMAIN (OPTIONAL)
+If you own a domain such as example.com:
+1. GitHub repository -> Settings -> Pages.
+2. Add your custom domain.
+3. Follow GitHub's DNS instructions at your domain provider.
+4. Enable HTTPS once available.
+5. Add the custom domain to Firebase Authorized domains too.
+DNS changes can take time to propagate.
+
+H. MAKE THE SITE "INDEXÉE" BY GOOGLE
+1. First deploy the final website publicly.
+2. Open Google Search Console: https://search.google.com/search-console/
+3. Add your website as a property.
+4. Verify ownership.
+5. Put your real domain in sitemap.xml by replacing:
+   DOMAIN_PLACEHOLDER
+   with the actual domain, for example:
+   https://YOUR-GITHUB-USERNAME.github.io/
+6. Do the same in robots.txt.
+7. Upload the updated sitemap.xml and robots.txt.
+8. In Search Console -> Sitemaps, submit:
+   sitemap.xml
+9. In URL Inspection, enter your homepage URL.
+10. Click "Request indexing".
+11. Repeat URL Inspection for important pages such as /matieres.html.
+Google says sitemap submission is a hint, not a guarantee, and indexing can take time.
+
+I. FINAL TEST
+1. Open the public website.
+2. Open Inscription.
+3. Create a test account.
+4. Check Firebase Console -> Authentication -> Users.
+5. The user should appear.
+6. Confirm the "Bonjour [name] 👋" bar appears.
+7. Sign out/reopen and confirm the session is restored.
+8. Test the password Afficher/Masquer button.
+9. Test Accueil, Matières, Inscription and every course page.
+
+Official references:
+Firebase web setup:
+https://firebase.google.com/docs/web/setup
+Firebase Authentication:
+https://firebase.google.com/docs/auth/web/start
+GitHub Pages:
+https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages
+GitHub custom domains:
+https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
+Google sitemap:
+https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap

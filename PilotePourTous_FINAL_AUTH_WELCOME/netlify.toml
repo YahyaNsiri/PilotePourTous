@@ -1,0 +1,12 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/matieres"
+  to = "/matieres.html"
+  status = 200
+
+[[redirects]]
+  from = "/inscription"
+  to = "/inscription.html"
+  status = 200

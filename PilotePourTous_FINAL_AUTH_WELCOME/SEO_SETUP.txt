@@ -1,0 +1,1 @@
+Après avoir choisi ton vrai nom de domaine, crée sitemap.xml avec des URLs absolues pour ce domaine et ajoute 'Sitemap: https://TON-DOMAINE/sitemap.xml' dans robots.txt. Puis ajoute le domaine à Google Search Console et utilise l'outil d'inspection d'URL.
